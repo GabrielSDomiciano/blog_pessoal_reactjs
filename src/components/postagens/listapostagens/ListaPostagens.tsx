@@ -5,6 +5,7 @@ import { buscar } from "../../../services/Service";
 import { DNA } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContexts";
 import CardPostagens from "../cardpostagens/Cardpostagens";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function ListaPostagens() {
 
@@ -32,7 +33,7 @@ function ListaPostagens() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta('Você precisa estar logado','erro')
             navigate('/');
         }
     }, [token])
